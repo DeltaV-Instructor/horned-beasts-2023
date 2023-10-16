@@ -1,18 +1,10 @@
 import React from "react";
 
-
-
-
-
-
 class Header extends React.Component {
-
-
-
-  render(){
-    return(
+  render() {
+    return (
       <>
-
+        <h1>Welcome to Our Website!!!!</h1>
       </>
     );
   }
