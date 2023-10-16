@@ -3,6 +3,7 @@ import "./App.css";
 //import header component
 import Header from './Header.jsx';
 import Footer from './Footer'
+import Main from './MainBody.jsx';
 //import the main(html) component
 
 class App extends React.Component {
@@ -15,6 +16,8 @@ class App extends React.Component {
     <>
     {/* new thingy  */}
        <Header />
+       {/* //add the Main section of pizzas  */}
+       <Main />
        <Footer />
 
     </>
