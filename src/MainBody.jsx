@@ -1,34 +1,20 @@
 import React from "react";
 import Pizza from "./Pizza";
+import data from "./data.json";
+
 class Mainbody extends React.Component {
+  //work gets done here
   render() {
+    //add here
+    console.log(data);
+    let pizzas = [];
+    data.forEach((newPizza, index) => {
+      pizzas.push(<Pizza   pizzaPie={newPizza.name} imageURL={newPizza.imageURL} key={index}/>)
+    })
+
     return (
       <>
-        <main>
-          {/* we need to give this component some data to display with the template Pizza  */}
-          <Pizza pizzaPie="Detroit" toppings="Cheese" crust="Detroit Style" />
-          <Pizza
-            pizzaPie="New York Thin"
-            toppings="Cheese"
-            crust="Detroit Style"
-          />
-          <Pizza
-            pizzaPie="Chicago Deep Dish"
-            toppings="Cheese"
-            crust="Detroit Style"
-          />
-          <Pizza
-            pizzaPie="Oven Grinder"
-            toppings="Cheese"
-            crust="Detroit Style"
-          />
-          <Pizza
-            pizzaPie="Brick Oven"
-            toppings="Cheese"
-            crust="Detroit Style"
-          />
-          <Pizza pizzaPie="Calzone" toppings="Cheese" crust="Detroit Style" />
-        </main>
+        <main>{pizzas}</main>
       </>
     );
   }
