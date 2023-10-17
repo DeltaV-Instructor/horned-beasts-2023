@@ -1,6 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import './App.css';
+import './Pizza.css'
 
 
 class Pizza extends React.Component {
