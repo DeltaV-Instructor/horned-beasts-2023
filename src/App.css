@@ -25,3 +25,8 @@ footer {
   color:rgb(255, 98, 0);
   font-size: 44px;
 }
+
+img {
+  height: 250px;
+  width: 250px;
+}
