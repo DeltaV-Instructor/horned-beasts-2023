@@ -50,6 +50,12 @@ class App extends React.Component {
 
         />
         <Footer />
+        {/* <SelectedBeast showModal={this.state.showModal} handleOnHide={this.handleOnHide} 
+          selectedBeast={this.state.selectBeast}
+        />  */}
+
+
+{/* this needs to go into a file called selected Beast  */}
 
         <Modal show={this.state.showModal} onHide={this.handleOnHide}>
           <Modal.Header closeButton>
