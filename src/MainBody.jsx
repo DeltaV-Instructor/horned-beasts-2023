@@ -8,14 +8,16 @@ class Mainbody extends React.Component {
   //work gets done here
   render() {
     //add here
-    console.log(data);
+    // console.log(data);
     let pizzas = [];
     data.forEach((newPizza, index) => {
       pizzas.push(
         <Pizza
           pizzaPie={newPizza.name}
           imageURL={newPizza.imageURL}
+          addPizza={this.props.addPizza}
           key={index}
+          handleOnShowModal={this.props.handleOnShowModal}
         />
       );
     });
