@@ -1,6 +1,8 @@
 import React from "react";
 import Pizza from "./Pizza";
 import data from "./data.json";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 class Mainbody extends React.Component {
   //work gets done here
@@ -9,12 +11,24 @@ class Mainbody extends React.Component {
     console.log(data);
     let pizzas = [];
     data.forEach((newPizza, index) => {
-      pizzas.push(<Pizza   pizzaPie={newPizza.name} imageURL={newPizza.imageURL} key={index}/>)
-    })
+      pizzas.push(
+        <Pizza
+          pizzaPie={newPizza.name}
+          imageURL={newPizza.imageURL}
+          key={index}
+        />
+      );
+    });
 
     return (
       <>
-        <main>{pizzas}</main>
+        <main>
+          <Container>
+            <Row lg={4} md={3} sm={2} xs={1}>
+            {pizzas}
+            </Row>
+          </Container>
+        </main>
       </>
     );
   }

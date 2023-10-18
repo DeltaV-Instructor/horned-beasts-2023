@@ -1,8 +1,10 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
-import './App.css';
-import './Pizza.css'
-
+// import Button from "react-bootstrap/Button";
+// import Card from "react-bootstrap/Card";
+// import Col from 'react-bootstrap/Col';
+import {Card, Button, Col} from 'react-bootstrap';
+import "./App.css";
+import "./Pizza.css";
 
 class Pizza extends React.Component {
   //add a constructor function add state
@@ -19,7 +21,7 @@ class Pizza extends React.Component {
   }
   //we are going to add some arrow function to help us manage state.
   handleLikes = () => {
-    console.log('handle the like');
+    console.log("handle the like");
     //lets update state
     this.setState({
       likes: this.state.likes + 1,
@@ -27,53 +29,67 @@ class Pizza extends React.Component {
     });
   };
 
-
   pizzaNeeded = () => {
-    console.log('proof of life');
+    console.log("proof of life");
     this.setState({
       pizzaNeed: true,
-    })
-  }
-
+    });
+  };
 
   pizzaGot = () => {
     this.setState({
       pizzaNeed: false,
-    })
-  }
-
-
-
-
+    });
+  };
 
   render() {
     // console.log("we got props?", this.props.crust);
     // console.log(this.state.likes);
     return (
       <>
-        {/* name and description  */}
-        <article>
-          {/* add props to display different pizza names  */}
+      <Col>
+
+      
+        <Card className="h-100 p-3">
+          <Card.Body>
+            <Card.Title>{this.props.pizzaPie}</Card.Title>
+
+            <Card.Img
+              variant="top"
+              src={this.props.imageURL}
+              alt={this.props.pizzaPie}
+              title={this.props.pizzaPie}
+            />
+
+            <h3>{this.props.pizzaPie}</h3>
+            <p>{this.state.likes} Likes</p>
+            <p onClick={this.handleLikes}>Click to like this pizza!</p>
+
+            <div>{this.state.pizzaNeed ? "I Got Pizza!" : "I need Pizza!"}</div>
+            {/* add two buttons  */}
+            <Button onClick={this.pizzaNeeded}>I need Pizza!</Button>
+            <Button variant="success" onClick={this.pizzaGot}>
+              I got Pizza!
+            </Button>
+          </Card.Body>
+        </Card>
+
+        </Col>
+        {/* <article>
           <h3>{this.props.pizzaPie}</h3>
           <p>{this.state.likes} Likes</p>
           <p onClick={this.handleLikes}>Click to like this pizza!</p>
         </article>
-         {/* so lets create an event handler 
-            dont do normally this is made for react, not html.
-        */}
-        <img src={this.props.imageURL} alt={this.props.pizzaPie} title={this.props.pizzaPie}/>
-
-         {/* conditional rendering for our button */}
-         {/* message to appear if pizza is awesome */}
-         {/* 
-            Ternary Operator
-            What? True : False 
-            BooleanValue ? console.log('true') : console.log('false');
-        */}
-        <div>{this.state.pizzaNeed ? 'I Got Pizza!' : 'I need Pizza!'}</div>
-        {/* add two buttons  */}
+        <img
+          src={this.props.imageURL}
+          alt={this.props.pizzaPie}
+          title={this.props.pizzaPie}
+        />
+        <div>{this.state.pizzaNeed ? "I Got Pizza!" : "I need Pizza!"}</div>
         <Button onClick={this.pizzaNeeded}>I need Pizza!</Button>
-        <Button variant="success" onClick={this.pizzaGot}>I got Pizza!</Button>
+        <Button variant="success" onClick={this.pizzaGot}>
+          I got Pizza!
+        </Button> */}
       </>
     );
   }
